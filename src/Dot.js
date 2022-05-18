@@ -1,10 +1,25 @@
 import React from 'react';
-import './Dot.css';
+import {useState} from 'react';
+import './css/main.css';
 
-const Dot = () => {
-    // TODO: put your code here
+const Dot = (id) => {
+
+    const [isActive, setIsActive] = useState(false);
+
+    const handleClick = () => {
+      setIsActive(current => !current);
+    };
+
+    const bulletId = id.id;
+    
     return (
-        <div className="dot"/>
+        <div className="c-dot" style={{
+          backgroundColor: isActive ? 'red' : ''
+        }}
+        onClick={handleClick} >
+            { isActive ? bulletId + 1 : null }
+            
+        </div>
     );
 };
 

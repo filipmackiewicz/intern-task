@@ -1,0 +1,21 @@
+.c-dot {
+    @include transition(background, .3s, ease-in, 0s);
+
+    width: 5rem;
+    height: 5rem;
+    margin-top: 1rem;
+
+    text-align: center;
+
+    color: $color-white;
+    border-radius: 5rem;
+    background-color: $color-black;
+}
+
+.c-dot {
+    margin-left: 1rem;
+}
+
+.c-dot:hover {
+    background: $color-red;
+}
