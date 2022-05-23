@@ -1,10 +1,14 @@
 import React from 'react';
-import './Dot.css';
+import './css/main.css';
 
-const Dot = () => {
-    // TODO: put your code here
+const Dot = ({ onClick, status, id }) => {
+
+    const bulletId = id;
+    
     return (
-        <div className="dot"/>
+        <div className="c-dot" style={{backgroundColor: status ? 'red' : ''}} onClick={onClick}>
+          { status ? bulletId + 1 : "" }
+        </div>
     );
 };
 
