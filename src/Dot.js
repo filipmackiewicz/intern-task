@@ -1,24 +1,13 @@
 import React from 'react';
-import {useState} from 'react';
 import './css/main.css';
 
-const Dot = (id) => {
+const Dot = ({ onClick, status, id }) => {
 
-    const [isActive, setIsActive] = useState(false);
-
-    const handleClick = () => {
-      setIsActive(current => !current);
-    };
-
-    const bulletId = id.id;
+    const bulletId = id;
     
     return (
-        <div className="c-dot" style={{
-          backgroundColor: isActive ? 'red' : ''
-        }}
-        onClick={handleClick} >
-            { isActive ? bulletId + 1 : null }
-            
+        <div className="c-dot" style={{backgroundColor: status ? 'red' : ''}} onClick={onClick}>
+          { status ? bulletId + 1 : "" }
         </div>
     );
 };
